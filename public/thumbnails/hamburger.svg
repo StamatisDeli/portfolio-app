@@ -1,0 +1,7 @@
+                <svg id="press-me" class="animated flipInY" xmlns="http://www.w3.org/2000/svg" width="48" height="27">
+                    <g fill="#C1272D" id="hamburger1">
+                        <path id="line1" d="M0 0h48v5H0z" />
+                        <path id="line2" d="M0 11h48v5H0z" />
+                        <path id="line3" d="M0 22h48v5H0z" />
+                    </g>
+                </svg>
