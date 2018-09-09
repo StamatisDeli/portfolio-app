@@ -7,3 +7,5 @@ This app uses create-react-app
 First issue is how to handle multiple conditional renderings for the pages. 
 
 I am using several functions but I am not sure how it scales
+
+Managed to render the desired page. The page key had to be passed to state.

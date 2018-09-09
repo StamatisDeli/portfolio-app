@@ -8,11 +8,11 @@ import Page3 from './Page3'
 
 /*,<Page4 key='4'/>,<Page5 key='5'/>*/
 
-
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            key:"",
             home: true,
             page: false,
             modal: false,
@@ -22,6 +22,10 @@ class App extends Component {
         this.togglePage = this.togglePage.bind(this)
         this.handleHomeButton = this.handleHomeButton.bind(this)
         this.indexP = this.indexP.bind(this)
+    }
+
+    componentDidMount(){
+        return this.state.pages
     }
 
     toggleHome() {
@@ -45,14 +49,15 @@ class App extends Component {
     }
 
     indexP(e) {
-        return e.target.dataset.key
+        this.setState({key:e.target.dataset.key})
     }
 
     render() {
         const modal = this.state.modal
         const page = this.state.page
         const home = this.state.home
-        const index=this.indexP
+        const components = this.state.pages
+        const index=this.state.key
         return (
             <div className="App">
                 <button
@@ -75,9 +80,11 @@ class App extends Component {
                         toggleModal={this.toggleModal}
                         togglePage={this.togglePage}
                         indexP={this.indexP}
-                        onclick={this.indexP}
+                        onClick={this.indexP}
                     />}
-               {this.state.pages[index]}
+            {this.state.pages[index]}
+            
+                    
             </div>
         )
     }
