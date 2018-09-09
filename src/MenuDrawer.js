@@ -14,12 +14,10 @@ class MenuDrawer extends React.Component {
                     >&times;</a>
                 </div>
                 <div className="drawer-content">
-                    <a data-key='2' 
-                    onClick={!this.props.page?this.props.togglePage:null}
-                    >Web Development</a>
-                    <a data-key='3'>DTP Oldies</a>
-                    <a data-key='4'>Illustrations</a>
-                    <a data-key='5'>About + Contact</a>
+                    <a data-key='1' onClick={this.props.indexP}>Web Development</a>
+                    <a data-key='2' onClick={!this.props.page?this.props.indexP:null}>DTP Oldies</a>
+                    <a data-key='3'>Illustrations</a>
+                    <a data-key='4'>About + Contact</a>
                 </div>
             </div>
         )
