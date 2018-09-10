@@ -12,52 +12,50 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            key:"",
-            home: true,
+            key: "",
+            home: true,//1 PAGE INITIALIZES WITH HOMEPAGE
             page: false,
             modal: false,
-            pages: [<Page1 key='0'/>, <Page2 key='1'/>, <Page3 key='2'/>]
+            pages: [<Page1 key='0' />, <Page2 key='1' />, <Page3 key='2' />]
         }
         this.toggleModal = this.toggleModal.bind(this)
         this.togglePage = this.togglePage.bind(this)
         this.handleHomeButton = this.handleHomeButton.bind(this)
         this.indexP = this.indexP.bind(this)
     }
-
-    componentDidMount(){
-        return this.state.pages
-    }
-
-    toggleHome() {
-        this.setState(({ home }) => ({ home: !home }));
-    }
-
+    //2 USER OPENS MODAL= HOME:TRUE, MODAL:TRUE, PAGE:FALSE
     toggleModal() {
         this.setState(({ modal }) => ({ modal: !modal }));
+    }
+    //3 USER CLICKS ON PAGE= HOME:FALSE, MODAL:FALSE, PAGE:TRUE
+    indexP(e) {
+        const modal = this.state.modal
+        const page = this.state.page
+        const home = this.state.home
         this.toggleHome()
+        this.togglePage()
+        this.setState({ key: e.target.dataset.key })
+        this.toggleModal()
     }
 
     togglePage() {
         this.setState(({ page }) => ({ page: !page }))
-        /*this.toggleModal()
-        this.toggleHome()*/
+    }
+    toggleHome() {
+        this.setState(({ home }) => ({ home: !home }));
     }
 
+    //4 USER CLICKS ON HOME BUTTON= HOME:TRUE, MODAL:FALSE, PAGE:FALSE
     handleHomeButton() {
+        this.toggleHome()
         this.togglePage()
-        this.toggleModal()
-    }
-
-    indexP(e) {
-        this.setState({key:e.target.dataset.key})
     }
 
     render() {
         const modal = this.state.modal
         const page = this.state.page
         const home = this.state.home
-        const components = this.state.pages
-        const index=this.state.key
+        const index = this.state.key
         return (
             <div className="App">
                 <button
@@ -66,25 +64,24 @@ class App extends Component {
                     onClick={!home ? this.handleHomeButton : null}>
                     <img src="./thumbnails/sdlogo.svg" alt="Back Button"></img>
                 </button>
-                {home ?
+                {home &&
                     <nav
                         className="nav"
                         onClick={this.toggleModal}>
                         <a title="menu" aria-label="menu">
                             <img src="./thumbnails/hamburger.svg" alt="Back Button"></img>
                         </a>
-                    </nav> : null}
+                    </nav>}
                 {!page && <Page1 />}
                 {modal &&
                     <MenuDrawer
                         toggleModal={this.toggleModal}
                         togglePage={this.togglePage}
                         indexP={this.indexP}
-                        onClick={this.indexP}
                     />}
-            {this.state.pages[index]}
-            
-                    
+                {!home&&this.state.pages[index]}
+
+
             </div>
         )
     }
