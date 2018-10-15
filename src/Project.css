@@ -1,0 +1,56 @@
+.web .project-container a {
+    background-color: rgb(0, 0, 0);
+    width: 250px;
+    z-index: 20;
+    padding: 0.8rem;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    transition: transform .15s ease-in-out;
+    -webkit-transition: transform .20s ease-in-out;
+}
+.web .project-container img {
+    position: relative;
+    object-fit: cover;
+    border-radius: 5px;
+    padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid rgba(255, 255, 255, 0.322);
+    margin-bottom: 0.3rem;
+    width:150px;
+    height:270px;
+    align-self: center;
+}
+.web .project-container h2 {
+    color: rgb(255, 154, 46);
+}
+.web .project-container h3 {
+    font-size: .9rem;
+    padding-bottom: 0.8rem;
+    color: rgb(219, 219, 219);
+}
+.web .project-container .tags p {
+    background: #6A9113;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1f0000, rgb(0, 0, 0));
+    background: linear-gradient(to right, #1f0000, rgb(0, 0, 0));
+    border: 1px solid rgba(255, 255, 255, 0.281);
+    font-size: .7rem;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    color: white;
+}
+.web .project-container:hover{
+    transform: scale(1.05);
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+  }

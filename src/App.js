@@ -5,8 +5,18 @@ import Page1 from './Page1'
 import MenuDrawer from './MenuDrawer'
 import Page2 from './Page2'
 import Page3 from './Page3'
-
+import projects from './projects.json'
+import logo from './thumbnails/sdlogo.svg'
+import hamburger from './thumbnails/hamburger.svg'
 /*,<Page4 key='4'/>,<Page5 key='5'/>*/
+
+//importing all images
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+const thumbnails = importAll(require.context('./thumbnails', false, /\.(png|jpe?g|svg)$/));
 
 class App extends Component {
     constructor(props) {
@@ -16,13 +26,23 @@ class App extends Component {
             home: true,//1 PAGE INITIALIZES WITH HOMEPAGE
             page: false,
             modal: false,
-            pages: [<Page1 key='0' />, <Page2 key='1' />, <Page3 key='2' />]
+            projects: [],
+            thumbnails:{},
+            pages: [<Page1 />, <Page2 projects={projects} thumbnails={thumbnails}/>, <Page3 projects={projects} thumbnails={thumbnails}/>]
+            
+
         }
         this.toggleModal = this.toggleModal.bind(this)
         this.togglePage = this.togglePage.bind(this)
         this.handleHomeButton = this.handleHomeButton.bind(this)
         this.indexP = this.indexP.bind(this)
+        //this.projects = this.projects.bind(this)
     }
+    componentDidMount() {
+        this.setState({ projects: projects })
+        this.setState({ thumbnails: thumbnails })
+    }
+
     //2 USER OPENS MODAL= HOME:TRUE, MODAL:TRUE, PAGE:FALSE
     toggleModal() {
         this.setState(({ modal }) => ({ modal: !modal }));
@@ -62,14 +82,14 @@ class App extends Component {
                     className="back-button"
                     aria-label="back button"
                     onClick={!home ? this.handleHomeButton : null}>
-                    <img src="./thumbnails/sdlogo.svg" alt="Back Button"></img>
+                    <img src={logo} alt="Back Button"></img>
                 </button>
                 {home &&
                     <nav
                         className="nav"
                         onClick={this.toggleModal}>
                         <a title="menu" aria-label="menu">
-                            <img src="./thumbnails/hamburger.svg" alt="Back Button"></img>
+                            <img src={hamburger} alt="Back Button"></img>
                         </a>
                     </nav>}
                 {!page && <Page1 />}
@@ -79,7 +99,7 @@ class App extends Component {
                         togglePage={this.togglePage}
                         indexP={this.indexP}
                     />}
-                {!home&&this.state.pages[index]}
+                {!home && this.state.pages[index]}
 
 
             </div>
