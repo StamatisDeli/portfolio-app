@@ -20,8 +20,8 @@
     background-color: rgb(34, 34, 34);
     border: 1px solid rgba(255, 255, 255, 0.322);
     margin-bottom: 0.3rem;
-    width:150px;
-    height:270px;
+    width:130px;
+    height:250px;
     align-self: center;
 }
 .web .project-container h2 {
@@ -45,6 +45,7 @@
     padding: 0.2rem;
     margin: 0.2rem;
     color: white;
+    line-height: 90%;
 }
 .web .project-container:hover{
     transform: scale(1.05);

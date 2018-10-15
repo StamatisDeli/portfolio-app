@@ -50,6 +50,9 @@
     vertical-align: -0.8rem;
     color: black;
 }
+.dev-social a {
+    cursor:pointer;
+}
 .web {
     z-index: 100;
     height: 75%;

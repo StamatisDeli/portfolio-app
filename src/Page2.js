@@ -13,11 +13,13 @@ class Page2 extends React.Component {
       <section className="page page2">
         <header className="dev-header">
           <h1>Front End Web Development</h1>
+          <div class="dev-github">
           <h3>All of my work<br></br>is on Github</h3>
           <div className="dev-social">
             <a href="https://github.com/StamatisDeli" title="My GitHub Page" target="_blank">
               <i className="fab fa-github"></i>
             </a>
+          </div>
           </div>
         </header>
         <div className="web">
