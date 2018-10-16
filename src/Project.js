@@ -3,9 +3,11 @@ import './normalize.css'
 import './Project.css'
 
 class Project extends React.Component {
+
   render() {
     return (
       <div className="project-container">
+        <div className="description">{"\u002B"}</div>
         <a href={this.props.url} title={this.props.title} target="_blank" rel="noopener noreferrer">
           <h2>{this.props.title}</h2>
           <h3>{this.props.subTitle}</h3>
