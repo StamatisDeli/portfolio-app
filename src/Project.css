@@ -71,6 +71,7 @@
     margin:0;
     z-index:5;
     font-size: 3rem;
-    color: rgba(255, 154, 46, 0.5);
+    color: rgba(255, 154, 46, 0.384);
     line-height: 105%;
+    cursor: pointer;
   }

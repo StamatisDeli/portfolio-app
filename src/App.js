@@ -27,16 +27,12 @@ class App extends Component {
             page: false,
             modal: false,
             projects: [],
-            thumbnails:{},
-            pages: [<Page1 />, <Page2 projects={projects} thumbnails={thumbnails}/>, <Page3 projects={projects} thumbnails={thumbnails}/>]
-            
-
+            thumbnails: {},
+            pages: [<Page1 />,
+            <Page2 projects={projects} thumbnails={thumbnails} />,
+            <Page3 projects={projects} thumbnails={thumbnails} />]
         }
-        this.toggleModal = this.toggleModal.bind(this)
-        this.togglePage = this.togglePage.bind(this)
-        this.handleHomeButton = this.handleHomeButton.bind(this)
-        this.indexP = this.indexP.bind(this)
-        //this.projects = this.projects.bind(this)
+
     }
     componentDidMount() {
         this.setState({ projects: projects })
@@ -44,11 +40,11 @@ class App extends Component {
     }
 
     //2 USER OPENS MODAL= HOME:TRUE, MODAL:TRUE, PAGE:FALSE
-    toggleModal() {
+    toggleModal=()=> {
         this.setState(({ modal }) => ({ modal: !modal }));
     }
     //3 USER CLICKS ON PAGE= HOME:FALSE, MODAL:FALSE, PAGE:TRUE
-    indexP(e) {
+    indexP=(e)=> {
         const modal = this.state.modal
         const page = this.state.page
         const home = this.state.home
@@ -58,15 +54,15 @@ class App extends Component {
         this.toggleModal()
     }
 
-    togglePage() {
+    togglePage=()=> {
         this.setState(({ page }) => ({ page: !page }))
     }
-    toggleHome() {
+    toggleHome=()=> {
         this.setState(({ home }) => ({ home: !home }));
     }
 
     //4 USER CLICKS ON HOME BUTTON= HOME:TRUE, MODAL:FALSE, PAGE:FALSE
-    handleHomeButton() {
+    handleHomeButton=()=> {
         this.toggleHome()
         this.togglePage()
     }
