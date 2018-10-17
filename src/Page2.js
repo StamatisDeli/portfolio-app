@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './Page2.css'
 import './normalize.css'
 import Project from './Project'
 
 class Page2 extends React.Component {
-  
-
-
-
   render() {
     //console.log(this.props.visible)
     const projects = this.props.projects
@@ -37,7 +33,6 @@ class Page2 extends React.Component {
               id={project.id}
               key={project.id}
               subTitle={project.subTitle}
-              
             />
           )}
         </div>

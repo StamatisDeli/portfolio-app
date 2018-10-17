@@ -1,3 +1,6 @@
+.web .project-container {
+    margin-top: -2rem;
+}
 .web .project-container a {
     background-color: rgb(0, 0, 0);
     width: 250px;
@@ -12,9 +15,10 @@
     transition: transform .15s ease-in-out;
     -webkit-transition: transform .20s ease-in-out;
     position: relative;
-    z-index:1;
+    z-index: 1;
     border-radius: 8px;
 }
+
 .web .project-container img {
     position: relative;
     object-fit: cover;
@@ -23,18 +27,21 @@
     background-color: rgb(34, 34, 34);
     border: 1px solid rgba(255, 255, 255, 0.322);
     margin-bottom: 0.3rem;
-    width:130px;
-    height:250px;
+    width: 130px;
+    height: 250px;
     align-self: center;
 }
+
 .web .project-container h2 {
     color: rgb(255, 154, 46);
 }
+
 .web .project-container h3 {
     font-size: .9rem;
     padding-bottom: 0.8rem;
     color: rgb(219, 219, 219);
 }
+
 .web .project-container .tags p {
     background: #6A9113;
     /* fallback for old browsers */
@@ -50,16 +57,12 @@
     color: white;
     line-height: 90%;
 }
-.web .project-container:hover{
+
+.web .project-container:hover {
     transform: scale(1.05);
 }
 
-.text {
-    color: white;
-    font-size: 20px;
-  }
-
-  .description {
+.description {
     position: relative;
     left: 220px;
     top: 40px;
@@ -68,10 +71,31 @@
     height: 50px;
     border-radius: 50%;
     background-color: black;
-    margin:0;
-    z-index:5;
+    margin: 0;
+    z-index: 5;
     font-size: 3rem;
     color: rgba(255, 154, 46, 0.384);
     line-height: 105%;
     cursor: pointer;
-  }
+}
+
+.overlay-text {
+    font-size: 15px;
+    background-color: rgb(255, 154, 46);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-text p {
+    color: black;
+    width: 80%;
+}

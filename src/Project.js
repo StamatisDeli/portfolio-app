@@ -3,31 +3,30 @@ import './normalize.css'
 import './Project.css'
 
 class Project extends React.Component {
-  state = { visible: false}
-  handleClick=(project, e)=> {
-    //e.preventDefault()
-    //e.stopPropagation()
-    //console.log(e.target)
+  state = { textHidden: true }
+
+  handleClick = () => {
     this.setState({
-      visible: !this.state.visible
+      textHidden: !this.state.textHidden
     })
   }
+  
   render() {
+    const textHidden = this.state.textHidden
     return (
       <div className="project-container" >
-        <div className="description"  onClick={this.handleClick}>{"\u002B"}</div>
+        <div className="description" onClick={this.handleClick}>{"\u002B"}</div>
         <a href={this.props.url} title={this.props.title} target="_blank" rel="noopener noreferrer">
           <h2>{this.props.title}</h2>
           <h3>{this.props.subTitle}</h3>
-          <img src={this.props.src} ></img>
+          <img src={this.props.src} alt={`A snapshot of ${this.props.title} project in mobile view`}></img>
           <div className="tags">
-            {this.props.tags.map((tag,i) => <p key={i} >{tag}</p>)}
+            {this.props.tags.map((tag, i) => <p key={i} >{tag}</p>)}
           </div>
-          {this.state.visible?<div className="overlay">
-            <div className="text" >
-              <p>{this.props.description}</p>
-            </div>
-          </div>:null}
+          {!textHidden ?
+            <div className="overlay-text">
+                <p>{this.props.description}</p>
+            </div> : textHidden}
         </a>
       </div>
     )

@@ -13,7 +13,7 @@ import hamburger from './thumbnails/hamburger.svg'
 //importing all images
 function importAll(r) {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    r.keys().map((item, index) =>  images[item.replace('./', '')] = r(item) );
     return images;
 }
 const thumbnails = importAll(require.context('./thumbnails', false, /\.(png|jpe?g|svg)$/));
@@ -45,9 +45,6 @@ class App extends Component {
     }
     //3 USER CLICKS ON PAGE= HOME:FALSE, MODAL:FALSE, PAGE:TRUE
     indexP=(e)=> {
-        const modal = this.state.modal
-        const page = this.state.page
-        const home = this.state.home
         this.toggleHome()
         this.togglePage()
         this.setState({ key: e.target.dataset.key })
