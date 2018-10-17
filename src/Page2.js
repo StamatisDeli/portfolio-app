@@ -4,16 +4,8 @@ import './normalize.css'
 import Project from './Project'
 
 class Page2 extends React.Component {
-  state = { visible: false }
+  
 
-  handleClick=(project, e)=> {
-    //e.preventDefault()
-    //e.stopPropagation()
-    console.log(e.target.project.id)
-    this.setState({
-      visible: !this.state.visible.project
-    })
-  }
 
 
   render() {
@@ -45,8 +37,7 @@ class Page2 extends React.Component {
               id={project.id}
               key={project.id}
               subTitle={project.subTitle}
-              visible={this.state.visible}
-              handleClick={this.handleClick}
+              
             />
           )}
         </div>
