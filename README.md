@@ -1,4 +1,5 @@
 This is my portfolio page in React.js
+---Under construction---
 
 My initial intention is to add Redux to it
 
