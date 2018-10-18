@@ -3,3 +3,8 @@
     padding: 2rem;
     z-index: 0;
 }
+
+.inform span{
+    white-space: pre-wrap;
+    color: yellow;
+}

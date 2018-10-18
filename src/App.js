@@ -10,14 +10,6 @@ import logo from './thumbnails/sdlogo.svg'
 import hamburger from './thumbnails/hamburger.svg'
 /*,<Page4 key='4'/>,<Page5 key='5'/>*/
 
-//importing all images
-function importAll(r) {
-    let images = {};
-    r.keys().map((item, index) =>  images[item.replace('./', '')] = r(item) );
-    return images;
-}
-const thumbnails = importAll(require.context('./thumbnails', false, /\.(png|jpe?g|svg)$/));
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -27,16 +19,11 @@ class App extends Component {
             page: false,
             modal: false,
             projects: [],
-            thumbnails: {},
             pages: [<Page1 />,
-            <Page2 projects={projects} thumbnails={thumbnails} />,
-            <Page3 projects={projects} thumbnails={thumbnails} />]
+            <Page2 projects={projects} />,
+            <Page3 projects={projects} />]
         }
 
-    }
-    componentDidMount() {
-        this.setState({ projects: projects })
-        this.setState({ thumbnails: thumbnails })
     }
 
     //2 USER OPENS MODAL= HOME:TRUE, MODAL:TRUE, PAGE:FALSE
@@ -69,6 +56,7 @@ class App extends Component {
         const page = this.state.page
         const home = this.state.home
         const index = this.state.key
+
         return (
             <div className="App">
                 <button
@@ -93,8 +81,6 @@ class App extends Component {
                         indexP={this.indexP}
                     />}
                 {!home && this.state.pages[index]}
-
-
             </div>
         )
     }

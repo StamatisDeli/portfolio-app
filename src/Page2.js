@@ -24,15 +24,9 @@ class Page2 extends React.Component {
         <div className="web">
           {projects.map((project, i) =>
             <Project
-              title={project.title}
-              description={project.description}
-              src={thumbnails[project.src]}
+              src={project.src}
               project={project}
-              tags={project.tags}
-              url={project.url}
-              id={project.id}
               key={project.id}
-              subTitle={project.subTitle}
             />
           )}
         </div>
