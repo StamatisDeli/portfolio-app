@@ -5,9 +5,7 @@ import Project from './Project'
 
 class Page2 extends React.Component {
   render() {
-    //console.log(this.props.visible)
     const projects = this.props.projects
-    const thumbnails = this.props.thumbnails
     return (
       <section className="page page2">
         <header className="dev-header">

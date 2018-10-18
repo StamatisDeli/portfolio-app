@@ -1,5 +1,6 @@
 import React from 'react'
 import './Page3.css'
+import stamatis from './images/stamatis.svg'
 
 class Page3 extends React.Component {
   render() {
@@ -43,7 +44,7 @@ class Page3 extends React.Component {
             </li>
           </ul>
         </div>
-        <div id="stam"><img src="./images/stamatis.svg" alt="a monochomatic picture of stamatis"></img></div>
+        <div id="stam"><img src={stamatis} alt="stamatis"></img></div>
         <footer>
           <p>&copy; Stamatis Deliyannis 2018</p>
         </footer>

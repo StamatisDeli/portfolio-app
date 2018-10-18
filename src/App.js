@@ -6,8 +6,8 @@ import MenuDrawer from './MenuDrawer'
 import Page2 from './Page2'
 import Page3 from './Page3'
 import projects from './projects.json'
-import logo from './thumbnails/sdlogo.svg'
-import hamburger from './thumbnails/hamburger.svg'
+import logo from './images/sdlogo.svg'
+import hamburger from './images/hamburger.svg'
 /*,<Page4 key='4'/>,<Page5 key='5'/>*/
 
 class App extends Component {
