@@ -6,6 +6,8 @@ import Project from './Project'
 class Page2 extends React.Component {
   render() {
     const projects = this.props.projects
+    const thumbnails = this.props.thumbnails
+    console.log(thumbnails)
     return (
       <section className="page page2">
         <header className="dev-header">
@@ -22,8 +24,8 @@ class Page2 extends React.Component {
         <div className="web">
           {projects.map((project, i) =>
             <Project
-              src={project.src}
               project={project}
+              src={thumbnails[project.src]}
               key={project.id}
             />
           )}

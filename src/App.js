@@ -8,20 +8,25 @@ import Page3 from './Page3'
 import projects from './projects.json'
 import logo from './images/sdlogo.svg'
 import hamburger from './images/hamburger.svg'
-/*,<Page4 key='4'/>,<Page5 key='5'/>*/
+
+//importing all images
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) =>  images[item.replace('./', '')] = r(item) );
+    return images;
+}
+const thumbnails = importAll(require.context('./thumbnails', false, /\.(png|jpe?g|svg)$/));
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            key: "",
             home: true,//1 PAGE INITIALIZES WITH HOMEPAGE
             page: false,
             modal: false,
-            projects: [],
             pages: [<Page1 />,
-            <Page2 projects={projects} />,
-            <Page3 projects={projects} />]
+            <Page2 projects={projects} thumbnails={thumbnails} />,
+            <Page3 />]
         }
 
     }
@@ -56,7 +61,6 @@ class App extends Component {
         const page = this.state.page
         const home = this.state.home
         const index = this.state.key
-
         return (
             <div className="App">
                 <button

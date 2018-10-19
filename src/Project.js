@@ -18,13 +18,14 @@ class Project extends React.Component {
   
   render() {
     const textHidden = this.state.textHidden
+    console.log(this.props.thumbnails)
     return (
       <div className="project-container" >
         <div className="description" onClick={this.handleClick}>{"\u002B"}</div>
         <a href={this.props.project.url} title={this.props.project.title} target="_blank" rel="noopener noreferrer">
           <h2>{this.props.project.title}</h2>
           <h3>{this.props.project.subTitle}</h3>
-          <img src={this.props.project.src} alt={`A snapshot of ${this.props.project.title} project in mobile view`}></img>
+          <img src={this.props.src} alt={`A snapshot of ${this.props.project.title} project in mobile view`}></img>
           <div className="tags">
             {this.props.project.tags.map((tag, i) => <p key={i} >{tag}</p>)}
           </div>
