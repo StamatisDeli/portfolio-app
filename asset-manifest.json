@@ -1,10 +1,16 @@
 {
   "main.css": "static/css/main.1c9d10a7.css",
   "main.css.map": "static/css/main.1c9d10a7.css.map",
-  "main.js": "static/js/main.f56cb840.js",
-  "main.js.map": "static/js/main.f56cb840.js.map",
+  "main.js": "static/js/main.a775cc36.js",
+  "main.js.map": "static/js/main.a775cc36.js.map",
+  "static\\media\\arcade.jpg": "static/media/arcade.890354aa.jpg",
   "static\\media\\editor.jpg": "static/media/editor.c27f7eb9.jpg",
+  "static\\media\\gardening.jpg": "static/media/gardening.873371d5.jpg",
   "static\\media\\hamburger.svg": "static/media/hamburger.f79c361d.svg",
+  "static\\media\\memory-game.jpg": "static/media/memory-game.ea3c2051.jpg",
+  "static\\media\\my-books.jpg": "static/media/my-books.dc7e6085.jpg",
+  "static\\media\\neighborhood.jpg": "static/media/neighborhood.14274d4b.jpg",
+  "static\\media\\restaurants.jpg": "static/media/restaurants.79c35726.jpg",
   "static\\media\\sdlogo.svg": "static/media/sdlogo.4bcac787.svg",
   "static\\media\\sigma_delta.svg": "static/media/sigma_delta.c05999f4.svg",
   "static\\media\\stamatis.svg": "static/media/stamatis.ef321fc2.svg"
