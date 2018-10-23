@@ -24,11 +24,12 @@ class App extends Component {
             home: true,//1 PAGE INITIALIZES WITH HOMEPAGE
             page: false,
             modal: false,
-            pages: [<Page1 />,
+            pages: [
+            <Page1 />,
             <Page2 projects={projects} thumbnails={thumbnails} />,
-            <Page3 />]
+            <Page3 />
+            ]
         }
-
     }
 
     //2 USER OPENS MODAL= HOME:TRUE, MODAL:TRUE, PAGE:FALSE

@@ -73,6 +73,18 @@
 .dev-social a {
     cursor:pointer;
 }
+.tech-selector h3 {
+    padding-bottom: 1rem;
+}
+.tech-selector p {
+    cursor: pointer;
+    display: inline;
+    padding: 0.2rem;
+    margin: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.281);
+    border-radius: 8px;
+
+}
 .web {
     z-index: 100;
     height: 75%;

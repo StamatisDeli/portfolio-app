@@ -4,10 +4,38 @@ import './normalize.css'
 import Project from './Project'
 
 class Page2 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      techUsed: [],
+      workingProjectsList:this.props.projects
+    }
+  }
+
+  componentDidMount() {
+    this.getTech()
+  }
+  getTech = () => {
+    let jsonRaw = this.props.projects.map(p => p.tags)
+    const merged = [].concat(...jsonRaw)
+    const final = [...new Set(merged)]
+    this.setState({ techUsed: final })
+    return final
+  }
+  handleClick = (e) => {
+    const projects = this.props.projects
+    const clickTarget = e.target.dataset.key
+    const selectedProjects = projects.filter(project =>
+      project.tags.includes(clickTarget)
+    )
+    this.setState({workingProjectsList:selectedProjects})
+    console.log(clickTarget, selectedProjects)
+  }
   render() {
     const projects = this.props.projects
     const thumbnails = this.props.thumbnails
-    console.log(thumbnails)
+    const techUsed = this.state.techUsed
+    const workingProjectsList = this.state.workingProjectsList
     return (
       <section className="page page2">
         <header className="dev-header">
@@ -21,12 +49,18 @@ class Page2 extends React.Component {
             </div>
           </div>
         </header>
+        <div className="tech-selector">
+          <h3>Filter projects by clicking on a tech:</h3>
+          {techUsed.map((tech, i) => <p key={i} data-key={tech} onClick={this.handleClick}>{tech}</p>)}
+        </div>
         <div className="web">
-          {projects.map((project, i) =>
+          {workingProjectsList.map((project) =>
             <Project
               project={project}
               src={thumbnails[project.src]}
-              key={project.id}
+              key={project.title}
+              projects={projects}
+
             />
           )}
         </div>
