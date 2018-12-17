@@ -8,7 +8,7 @@ class Page2 extends React.Component {
     super(props);
     this.state = {
       techUsed: [],
-      workingProjectsList:this.props.projects
+      workingProjectsList: this.props.projects
     }
   }
 
@@ -28,8 +28,7 @@ class Page2 extends React.Component {
     const selectedProjects = projects.filter(project =>
       project.tags.includes(clickTarget)
     )
-    this.setState({workingProjectsList:selectedProjects})
-    console.log(clickTarget, selectedProjects)
+    this.setState({ workingProjectsList: selectedProjects })
   }
   render() {
     const projects = this.props.projects
@@ -51,7 +50,13 @@ class Page2 extends React.Component {
         </header>
         <div className="tech-selector">
           <h3>Filter projects by clicking on a tech:</h3>
-          {techUsed.map((tech, i) => <p key={i} data-key={tech} onClick={this.handleClick}>{tech}</p>)}
+          {techUsed.map((tech, i) =>
+            <p
+              key={i}
+              data-key={tech}
+              onClick={this.handleClick}>
+              {tech}
+            </p>)}
         </div>
         <div className="web">
           {workingProjectsList.map((project) =>
